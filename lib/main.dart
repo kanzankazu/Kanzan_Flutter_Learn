@@ -1,4 +1,4 @@
-import 'package:belajar_1/widget/hello_world_stateful.dart';
+import 'package:belajar_1/widget/baris_kolom.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,9 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Belajar Flutter',
-      home: HelloWorldStateFul(
-        message: "Ini Message",
-      ), // tinggal ubah manggilnya
+      home: BarisKolom(), // tinggal ubah manggilnya
     );
   }
 }
