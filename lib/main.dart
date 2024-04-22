@@ -1,3 +1,4 @@
+import 'package:belajar_1/hello_world.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -69,16 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Belajar Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Ini AppBar"),
-        ),
-        body: const Center(
-          child: Text("Ini Text Center"),
-        ),
-      ),
+      home: HelloWorld(),
     );
   }
 }
