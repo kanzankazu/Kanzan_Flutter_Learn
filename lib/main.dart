@@ -1,4 +1,4 @@
-import 'package:belajar_1/hello_world.dart';
+import 'package:belajar_1/row_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Belajar Flutter',
-      home: HelloWorld(),
+      home: RowWidget(),
     );
   }
 }
