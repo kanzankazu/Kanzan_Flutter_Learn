@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Belajar Flutter',
-      home: RowWidget(),
+      home: RowWidget(), // tinggal ubah manggilnya
     );
   }
 }
