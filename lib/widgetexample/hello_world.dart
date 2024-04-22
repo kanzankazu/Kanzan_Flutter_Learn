@@ -9,6 +9,7 @@ class HelloWorld extends StatelessWidget {
       title: 'Belajar Flutter',
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text("Ini AppBar"),
         ),
         body: const Center(

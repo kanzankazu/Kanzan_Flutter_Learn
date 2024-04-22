@@ -1,14 +1,13 @@
-// This is a basic Flutter widget test.
+// This is a basic Flutter widgetexample test.
 //
-// To perform an interaction with a widget in your test, use the WidgetTester
+// To perform an interaction with a widgetexample in your test, use the WidgetTester
 // utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
+// gestures. You can also use WidgetTester to find child widgets in the widgetexample
+// tree, read text, and verify that the values of widgetexample properties are correct.
 
 import 'package:belajar_1/main.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

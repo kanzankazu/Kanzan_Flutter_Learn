@@ -1,4 +1,4 @@
-import 'package:belajar_1/widget/baris_kolom.dart';
+import 'package:belajar_1/ui/poli_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,31 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: true,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrangeAccent),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Belajar Flutter'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Belajar Flutter',
-      home: BarisKolom(), // tinggal ubah manggilnya
+      home: const PoliPage(),
     );
   }
 }
