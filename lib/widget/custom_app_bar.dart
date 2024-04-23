@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomAppBar({
-    super.key,
-    required this.titleAppBar,
-    /*required this.onTextChanged*/
+    super.key, required this.title, this.actions
+      /*required this.onTextChanged*/
   });
 
-  final String titleAppBar;
+  final String title;
+  final List<Widget>? actions;
 
   //final Function(String) onTextChanged;
 
@@ -25,16 +25,15 @@ class _CustomAppBar extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Text(widget.titleAppBar),
-      /*actions: [
-        IconButton(
+      title: Text(widget.title),
+      actions: widget.actions,
+      /*IconButton(
           icon: const Icon(Icons.search),
           onPressed: () {
             // Memanggil fungsi onTextChanged dan meneruskan teks yang diinputkan
             widget.onTextChanged(_controller.text);
           },
-        ),
-      ],*/
+        ),*/
       /*bottom: PreferredSize(
         preferredSize: const Size.fromHeight(48),
         child: Padding(

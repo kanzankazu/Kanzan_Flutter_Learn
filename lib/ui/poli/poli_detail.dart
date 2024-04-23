@@ -15,7 +15,7 @@ class PoliDetailState extends State<PoliDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(titleAppBar: "Detail Poli "),
+      appBar: const CustomAppBar(title: "Detail Poli "),
       body: Column(
         children: [
           const SizedBox(height: 20),

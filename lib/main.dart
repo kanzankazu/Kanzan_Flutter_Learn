@@ -1,4 +1,4 @@
-import 'package:belajar_1/ui/poli_page.dart';
+import 'package:belajar_1/ui/poli/poli_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
