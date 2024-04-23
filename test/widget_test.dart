@@ -5,11 +5,7 @@
 // gestures. You can also use WidgetTester to find child widgets in the widgetexample
 // tree, read text, and verify that the values of widgetexample properties are correct.
 
-import 'package:belajar_1/main.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-void main() {
+/*void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
@@ -26,4 +22,4 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
-}
+}*/

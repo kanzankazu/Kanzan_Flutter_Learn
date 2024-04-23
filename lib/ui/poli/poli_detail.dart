@@ -72,13 +72,13 @@ class PoliDetailState extends State<PoliDetail> {
   _hapusButton() => ElevatedButton(
       onPressed: () {
         AlertDialog alertDialog = AlertDialog(
-          content: Text("Yakin ingin menghapus data ini?"),
+          content: const Text("Yakin ingin menghapus data ini?"),
           actions: [
             // tombol ya
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliPage()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PoliPage()));
               },
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
               child: const Text("YA",

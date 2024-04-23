@@ -12,36 +12,36 @@ class Sidebar extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          UserAccountsDrawerHeader(accountName: Text("Admin"), accountEmail: Text("admin@admin.com")),
+          const UserAccountsDrawerHeader(accountName: Text("Admin"), accountEmail: Text("admin@admin.com")),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text("Beranda"),
+            leading: const Icon(Icons.home),
+            title: const Text("Beranda"),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Beranda()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Beranda()));
             },
           ),
           ListTile(
-            leading: Icon(Icons.accessible),
-            title: Text("Poli"),
+            leading: const Icon(Icons.accessible),
+            title: const Text("Poli"),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => PoliPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const PoliPage()));
             },
           ),
           ListTile(
-            leading: Icon(Icons.people),
-            title: Text("Pegawai"),
+            leading: const Icon(Icons.people),
+            title: const Text("Pegawai"),
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.account_box_sharp),
-            title: Text("Pasien"),
+            leading: const Icon(Icons.account_box_sharp),
+            title: const Text("Pasien"),
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.logout_rounded),
-            title: Text("Keluar"),
+            leading: const Icon(Icons.logout_rounded),
+            title: const Text("Keluar"),
             onTap: () {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Login()), (Route<dynamic> route) => false);
+              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const Login()), (Route<dynamic> route) => false);
             },
           )
         ],

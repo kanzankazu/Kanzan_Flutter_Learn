@@ -19,22 +19,23 @@ class LoginState extends State<Login> {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
-            child: Container(
+            child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Login Admin",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
-              ),
+              Text("Login Admin",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500,
+                  )),
               SizedBox(
                 height: 50,
               ),
               Center(
                 child: Form(
                   key: _formKey,
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.of(context).size.width / 1.3,
                     child: Column(
                       children: [
@@ -71,7 +72,7 @@ class LoginState extends State<Login> {
   }
 
   Widget _tombolLogin() {
-    return Container(
+    return SizedBox(
         width: MediaQuery.of(context).size.width,
         child: ElevatedButton(
           child: Text("Login"),
