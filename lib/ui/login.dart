@@ -1,8 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:belajar_1/helper/poli_service.dart';
 import 'package:belajar_1/ui/beranda.dart';
 import 'package:flutter/material.dart';
+
+import '../helper/login_service.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -26,12 +25,12 @@ class LoginState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Login Admin",
+              const Text("Login Admin",
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Center(
@@ -42,9 +41,9 @@ class LoginState extends State<Login> {
                     child: Column(
                       children: [
                         _usernameTextField(),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         _passwordTextField(),
-                        SizedBox(height: 40),
+                        const SizedBox(height: 40),
                         _tombolLogin(),
                       ],
                     ),
@@ -60,14 +59,14 @@ class LoginState extends State<Login> {
 
   Widget _usernameTextField() {
     return TextFormField(
-      decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Username"),
+      decoration: const InputDecoration(border: OutlineInputBorder(), labelText: "Username"),
       controller: _usernameCtrl,
     );
   }
 
   Widget _passwordTextField() {
     return TextFormField(
-      decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Password"),
+      decoration: const InputDecoration(border: OutlineInputBorder(), labelText: "Password"),
       obscureText: true,
       controller: _passwordCtrl,
     );
@@ -77,16 +76,16 @@ class LoginState extends State<Login> {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
-          child: Text("Login"),
+          child: const Text("Login"),
           onPressed: () async {
             String username = _usernameCtrl.text;
             String password = _passwordCtrl.text;
             await LoginService().login(username, password).then((value) {
-              if (value == true) {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Beranda()));
+              if (value.$1 == true) {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Beranda()));
               } else {
                 AlertDialog alertDialog = AlertDialog(
-                  content: const Text("Username atau Password Tidak Valid"),
+                  content: Text(value.$2),
                   actions: [
                     ElevatedButton(
                       onPressed: () {

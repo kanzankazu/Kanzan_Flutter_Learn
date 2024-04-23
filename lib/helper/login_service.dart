@@ -1,39 +1,30 @@
-import 'package:belajar_1/helper/api_client.dart';
-import 'package:belajar_1/model/poli.dart';
-import 'package:dio/dio.dart';
+import 'package:belajar_1/helper/user_info.dart';
 
-class PoliService {
-  Future<List<Poli>> listData() async {
-    final Response response = await ApiClient().get('poli');
-    final List data = response.data as List;
-    List<Poli> result = data.map((json) => Poli.fromJson(json)).toList();
-    return result;
+class LoginService {
+  Future<(bool, String)> login(String username, String password) async {
+    bool isLogin = false;
+    String errorMessage = "";
+    if (username == 'admin' && password == 'admin') {
+      await UserInfo().setToken("admin");
+      await UserInfo().setUserID("1");
+      await UserInfo().setUsername("admin");
+      errorMessage = "";
+      isLogin = true;
+    } else if (username.isEmpty && password.isEmpty) {
+      errorMessage = "Username dan Password kosong";
+      isLogin = false;
+    } else if (username.isEmpty || password.isEmpty) {
+      errorMessage = "Username atau Password ada yang kosong";
+      isLogin = false;
+    } else {
+      errorMessage = "Username atau Password Tidak Valid";
+      isLogin = false;
+    }
+    return (isLogin, errorMessage);
   }
 
-  Future<Poli> simpan(Poli poli) async {
-    var data = poli.toJson();
-    final Response response = await ApiClient().post('poli', data);
-    Poli result = Poli.fromJson(response.data);
-    return result;
-  }
-
-  Future<Poli> ubah(Poli poli, String id) async {
-    var data = poli.toJson();
-    final Response response = await ApiClient().put('poli/${id}', data);
-    print(response);
-    Poli result = Poli.fromJson(response.data);
-    return result;
-  }
-
-  Future<Poli> getById(String id) async {
-    final Response response = await ApiClient().get('poli/${id}');
-    Poli result = Poli.fromJson(response.data);
-    return result;
-  }
-
-  Future<Poli> hapus(Poli poli) async {
-    final Response response = await ApiClient().delete('poli/${poli.id}');
-    Poli result = Poli.fromJson(response.data);
-    return result;
+  Future<bool> logout() async {
+    await UserInfo().logout();
+    return true;
   }
 }

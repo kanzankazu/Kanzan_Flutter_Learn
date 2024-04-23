@@ -1,12 +1,13 @@
 import 'package:belajar_1/helper/user_info.dart';
 import 'package:belajar_1/ui/beranda.dart';
 import 'package:belajar_1/ui/login.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   var token = await UserInfo().getToken();
-  print(token);
+  if (kDebugMode) print(token);
   runApp(MyApp(token: token));
 }
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: token == null ? Login() : Beranda(),
+      home: token == null ? const Login() : const Beranda(),
     );
   }
 }
