@@ -1,6 +1,7 @@
 import 'package:belajar_1/model/poli.dart';
 import 'package:belajar_1/ui/poli/poli_form_add_edit.dart';
 import 'package:belajar_1/ui/poli/poli_item.dart';
+import 'package:belajar_1/ui/sidebar.dart';
 import 'package:belajar_1/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class PoliPageState extends State<PoliPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Sidebar(),
       appBar: CustomAppBar(
         title: "Data Poli",
         actions: [

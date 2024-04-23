@@ -1,4 +1,4 @@
-import 'package:belajar_1/ui/poli/poli_page.dart';
+import 'package:belajar_1/ui/beranda.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: const PoliPage(),
+      home: const Beranda(),
     );
   }
 }

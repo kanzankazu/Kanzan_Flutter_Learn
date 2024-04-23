@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
+import 'package:belajar_1/ui/sidebar.dart';
 import 'package:belajar_1/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +7,8 @@ class Beranda extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
+      drawer: Sidebar(),
       appBar: CustomAppBar(title: "Beranda"),
       body: Center(
         child: Text("Selamat Datang"),
