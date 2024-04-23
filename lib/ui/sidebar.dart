@@ -1,3 +1,4 @@
+import 'package:belajar_1/helper/poli_service.dart';
 import 'package:belajar_1/ui/beranda.dart';
 import 'package:belajar_1/ui/login.dart';
 import 'package:belajar_1/ui/poli/poli_page.dart';
@@ -17,14 +18,14 @@ class Sidebar extends StatelessWidget {
             leading: const Icon(Icons.home),
             title: const Text("Beranda"),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const Beranda()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Beranda()));
             },
           ),
           ListTile(
             leading: const Icon(Icons.accessible),
             title: const Text("Poli"),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const PoliPage()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PoliPage()));
             },
           ),
           ListTile(
@@ -40,8 +41,17 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.logout_rounded),
             title: const Text("Keluar"),
-            onTap: () {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const Login()), (Route<dynamic> route) => false);
+            onTap: () async {
+              await LoginService().logout().then((value) => {
+                    if (value)
+                      {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Login()),
+                          (Route<dynamic> route) => false,
+                        )
+                      }
+                  });
             },
           )
         ],

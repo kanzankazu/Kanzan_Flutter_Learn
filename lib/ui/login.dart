@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:belajar_1/helper/poli_service.dart';
+import 'package:belajar_1/ui/beranda.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -58,14 +60,14 @@ class LoginState extends State<Login> {
 
   Widget _usernameTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Username"),
+      decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Username"),
       controller: _usernameCtrl,
     );
   }
 
   Widget _passwordTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Password"),
+      decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Password"),
       obscureText: true,
       controller: _passwordCtrl,
     );
@@ -73,10 +75,32 @@ class LoginState extends State<Login> {
 
   Widget _tombolLogin() {
     return SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: ElevatedButton(
+      width: MediaQuery.of(context).size.width,
+      child: ElevatedButton(
           child: Text("Login"),
-          onPressed: () {},
-        ));
+          onPressed: () async {
+            String username = _usernameCtrl.text;
+            String password = _passwordCtrl.text;
+            await LoginService().login(username, password).then((value) {
+              if (value == true) {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Beranda()));
+              } else {
+                AlertDialog alertDialog = AlertDialog(
+                  content: const Text("Username atau Password Tidak Valid"),
+                  actions: [
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                      child: const Text("OK"),
+                    )
+                  ],
+                );
+                showDialog(context: context, builder: (context) => alertDialog);
+              }
+            });
+          }),
+    );
   }
 }
