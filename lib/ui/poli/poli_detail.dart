@@ -1,4 +1,5 @@
 import 'package:belajar_1/model/poli.dart';
+import 'package:belajar_1/ui/poli/poli_form_add_edit.dart';
 import 'package:belajar_1/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -16,23 +17,64 @@ class PoliDetailState extends State<PoliDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail Poli "),
-      body: Column(
-        children: [
-          const SizedBox(height: 20),
-          Text(
-            "Nama Poli : ${widget.poli.namaPoli}",
-            style: const TextStyle(fontSize: 20),
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: Card(
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Center(
+                  child: Text(
+                    "Nama Poli : ${widget.poli.namaPoli}",
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _ubahButton(),
+                    _hapusButton(),
+                  ],
+                )
+              ],
+            ),
           ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(onPressed: () {}, style: ElevatedButton.styleFrom(backgroundColor: Colors.green), child: const Text("Ubah")),
-              ElevatedButton(onPressed: () {}, style: ElevatedButton.styleFrom(backgroundColor: Colors.red), child: const Text("Hapus")),
-            ],
-          )
-        ],
+        ),
       ),
     );
   }
+
+  _ubahButton() => ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (c) => PoliFormAddEdit(poli: widget.poli)),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.green,
+      ),
+      child: const Text(
+        "Ubah",
+        style: TextStyle(
+          color: Colors.black,
+          decorationColor: Colors.green,
+          decorationStyle: TextDecorationStyle.wavy,
+        ),
+      ));
+
+  _hapusButton() => ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+      child: const Text("Hapus",
+          style: TextStyle(
+            color: Colors.black,
+            decorationColor: Colors.green,
+            decorationStyle: TextDecorationStyle.wavy,
+          )));
 }

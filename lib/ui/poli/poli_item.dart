@@ -13,9 +13,12 @@ class PoliItem extends StatelessWidget {
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: poli)));
       },
-      child: Card(
-        child: ListTile(
-          title: Text(poli.namaPoli),
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        child: Card(
+          child: ListTile(
+            title: Text(poli.namaPoli),
+          ),
         ),
       ),
     );
