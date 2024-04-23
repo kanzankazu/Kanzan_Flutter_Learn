@@ -1,5 +1,6 @@
 import 'package:belajar_1/model/poli.dart';
 import 'package:belajar_1/ui/poli/poli_form_add_edit.dart';
+import 'package:belajar_1/ui/poli/poli_page.dart';
 import 'package:belajar_1/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +70,45 @@ class PoliDetailState extends State<PoliDetail> {
       ));
 
   _hapusButton() => ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        AlertDialog alertDialog = AlertDialog(
+          content: Text("Yakin ingin menghapus data ini?"),
+          actions: [
+            // tombol ya
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliPage()));
+              },
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              child: const Text("YA",
+                  style: TextStyle(
+                    color: Colors.black,
+                    decorationColor: Colors.green,
+                    decorationStyle: TextDecorationStyle.wavy,
+                  )),
+            ),
+// tombol batal
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+              child: const Text("Tidak",
+                  style: TextStyle(
+                    color: Colors.black,
+                    decorationColor: Colors.green,
+                    decorationStyle: TextDecorationStyle.wavy,
+                  )),
+            )
+          ],
+        );
+        showDialog(
+            context: context,
+            builder: (c) {
+              return alertDialog;
+            });
+      },
       style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
       child: const Text("Hapus",
           style: TextStyle(
