@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:belajar_1/ui/poli/poli_detail.dart';
 import 'package:belajar_1/ui/poli/poli_form_add_edit.dart';
 import 'package:belajar_1/ui/poli/poli_item.dart';
 import 'package:belajar_1/ui/sidebar.dart';
@@ -48,7 +49,9 @@ class PoliPageState extends State<PoliPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const PoliFormAddEdit()),
-              );
+              ).then((value) {
+                return refreshCollectionItems();
+              });
             },
           )
         ]),
@@ -63,7 +66,15 @@ class PoliPageState extends State<PoliPage> {
                     padding: const EdgeInsets.all(8),
                     itemCount: data.length,
                     itemBuilder: (context, index) {
-                      return PoliItem(poli: data[index]);
+                      return PoliItem(
+                        poli: data[index],
+                        onTapNew: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => PoliDetail(poli: data[index])),
+                          ).then((value) => refreshCollectionItems());
+                        },
+                      );
                     });
               },
             ),
