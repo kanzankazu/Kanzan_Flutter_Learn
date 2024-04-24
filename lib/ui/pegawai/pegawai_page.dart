@@ -12,9 +12,7 @@ class PegawaiPageState extends State<PegawaiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: "Data Poli",
-      ),
+      appBar: const CustomAppBar(title: "Data Pegawai"),
       body: ListView(
         children: const [],
       ),

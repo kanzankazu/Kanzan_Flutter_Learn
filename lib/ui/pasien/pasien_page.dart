@@ -15,9 +15,7 @@ class PasienPageState extends State<PasienPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: "Data Poli",
-      ),
+      appBar: const CustomAppBar(title: "Data Pasien"),
       body: ListView(
         children: [
           CustomCardGestureDetector(

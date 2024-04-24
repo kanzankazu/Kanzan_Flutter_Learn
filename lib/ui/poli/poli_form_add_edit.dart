@@ -1,3 +1,4 @@
+import 'package:belajar_1/helper/poli_service.dart';
 import 'package:belajar_1/model/poli.dart';
 import 'package:belajar_1/ui/poli/poli_detail.dart';
 import 'package:belajar_1/widget/custom_app_bar.dart';
@@ -13,9 +14,10 @@ class PoliFormAddEdit extends StatefulWidget {
 }
 
 class PoliFormAddEditState extends State<PoliFormAddEdit> {
-  late final _formKey = GlobalKey<FormState>();
-  late final _namaPoliCtrl = TextEditingController();
+  late final formKey = GlobalKey<FormState>();
+  late final poliNameCtrl = TextEditingController();
 
+  String poliId = "";
   String titleToolbar = "";
   String titleButton = "";
 
@@ -27,20 +29,21 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
     super.initState();
     setState(() {
       _isPoliNull = widget.poli.isNull();
-      _namaPoliCtrl.text = (_isPoliNull == false ? widget.poli!.namaPoli : "");
+      poliId = widget.poli?.id ?? "";
+      poliNameCtrl.text = widget.poli?.namaPoli ?? "";
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    titleToolbar = _isPoliNull == false ? "Ubah Poli" : "Tambah Poli";
-    titleButton = _isPoliNull == false ? "Simpan Perubahan" : "Simpan";
+    titleToolbar = _isPoliNull ? "Tambah Poli" : "Ubah Poli";
+    titleButton = _isPoliNull ? "Simpan" : "Simpan Perubahan";
 
     return Scaffold(
       appBar: CustomAppBar(title: titleToolbar),
       body: SingleChildScrollView(
         child: Form(
-            key: _formKey,
+            key: formKey,
             child: Container(
               padding: const EdgeInsets.all(16),
               child: Card(
@@ -60,7 +63,7 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
     return Container(
       margin: const EdgeInsets.all(16),
       child: TextField(
-        controller: _namaPoliCtrl,
+        controller: poliNameCtrl,
         decoration: const InputDecoration(border: OutlineInputBorder(), labelText: "Nama Poli"),
       ),
     );
@@ -68,11 +71,21 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
 
   _tombolSimpan() {
     return ElevatedButton(
-        onPressed: () {
-          Poli poli = Poli(namaPoli: _namaPoliCtrl.text);
-          if (widget.poli != null) Navigator.pop(context);
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: poli)));
-          _namaPoliCtrl.clear();
+        onPressed: () async {
+          if (_isPoliNull) {
+            Poli poli = Poli(namaPoli: poliNameCtrl.text);
+            await PoliService().save(poli).then((value) {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: value)));
+              poliNameCtrl.clear();
+            });
+          } else {
+            var poli = Poli(id: poliId, namaPoli: poliNameCtrl.text);
+            await PoliService().edit(poli, poliId).then((value) {
+              Navigator.pop(context);
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: value)));
+              poliNameCtrl.clear();
+            });
+          }
         },
         child: Text(titleButton));
   }

@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 class PoliService {
-  Future<List<Poli>> listData() async {
+  Future<List<Poli>> getList() async {
     final Response response = await ApiClient().get('poli');
     final List data = response.data as List;
     List<PoliResponse> result = data.map((json) => PoliResponse.fromJson(json)).toList();
@@ -13,7 +13,7 @@ class PoliService {
     return mapListPoliResponseToPoliList;
   }
 
-  Future<Poli> simpan(Poli poli) async {
+  Future<Poli> save(Poli poli) async {
     var data = poli.toJson();
     final Response response = await ApiClient().post('poli', data);
     PoliResponse result = PoliResponse.fromJson(response.data);
@@ -21,7 +21,7 @@ class PoliService {
     return mapPoliResponseToPoli;
   }
 
-  Future<Poli> ubah(Poli poli, String id) async {
+  Future<Poli> edit(Poli poli, String id) async {
     var data = poli.toJson();
     final Response response = await ApiClient().put('poli/$id', data);
     if (kDebugMode) print(response);
@@ -37,7 +37,7 @@ class PoliService {
     return mapPoliResponseToPoli;
   }
 
-  Future<Poli> hapus(Poli poli) async {
+  Future<Poli> delete(Poli poli) async {
     final Response response = await ApiClient().delete('poli/${poli.id}');
     PoliResponse result = PoliResponse.fromJson(response.data);
     var mapPoliResponseToPoli = result.mapPoliResponseToPoli();

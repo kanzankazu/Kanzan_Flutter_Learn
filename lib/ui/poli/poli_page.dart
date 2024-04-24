@@ -19,17 +19,17 @@ class PoliPageState extends State<PoliPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const Sidebar(),
-      appBar: CustomAppBar(
-        title: "Data Poli",
-        actions: [
-          GestureDetector(
-            child: const Icon(Icons.add),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const PoliFormAddEdit()));
-            },
-          )
-        ],
-      ),
+      appBar: CustomAppBar(title: "Data Poli", actions: [
+        GestureDetector(
+          child: const Icon(Icons.add),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const PoliFormAddEdit()),
+            );
+          },
+        )
+      ]),
       body: StreamBuilder(
         stream: getList(),
         builder: (context, AsyncSnapshot<List<Poli>> snapshot) {
@@ -63,7 +63,7 @@ class PoliPageState extends State<PoliPage> {
   }
 
   Stream<List<Poli>> getList() async* {
-    List<Poli> data = await PoliService().listData();
+    List<Poli> data = await PoliService().getList();
     yield data;
   }
 }
