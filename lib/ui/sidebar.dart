@@ -1,5 +1,7 @@
 import 'package:belajar_1/ui/beranda.dart';
 import 'package:belajar_1/ui/login.dart';
+import 'package:belajar_1/ui/pasien/pasien_page.dart';
+import 'package:belajar_1/ui/pegawai/pegawai_page.dart';
 import 'package:belajar_1/ui/poli/poli_page.dart';
 import 'package:flutter/material.dart';
 
@@ -32,12 +34,16 @@ class Sidebar extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.people),
             title: const Text("Pegawai"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PegawaiPage()));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.account_box_sharp),
             title: const Text("Pasien"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PasienPage()));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.logout_rounded),
