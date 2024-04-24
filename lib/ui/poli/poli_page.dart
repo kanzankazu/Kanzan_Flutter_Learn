@@ -3,6 +3,7 @@ import 'package:belajar_1/ui/poli/poli_form_add_edit.dart';
 import 'package:belajar_1/ui/poli/poli_item.dart';
 import 'package:belajar_1/ui/sidebar.dart';
 import 'package:belajar_1/widget/custom_app_bar.dart';
+import 'package:belajar_1/widget/custom_stream_builder.dart';
 import 'package:flutter/material.dart';
 
 import '../../helper/poli_service.dart';
@@ -30,36 +31,18 @@ class PoliPageState extends State<PoliPage> {
           },
         )
       ]),
-      body: StreamBuilder(
-        stream: getList(),
-        builder: (context, AsyncSnapshot<List<Poli>> snapshot) {
-          if (snapshot.hasError) {
-            return Text(snapshot.error.toString());
-          }
-          if (snapshot.connectionState != ConnectionState.done) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          if (!snapshot.hasData && snapshot.connectionState == ConnectionState.done) {
-            return const Center(
-                child: Text(
-              "Data Kosong",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ));
-          }
-          return ListView.builder(
+        body: CustomStreamBuilder(
+          stream: getList(),
+          onSuccessWidget: (data) {
+            return ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(8),
-              itemCount: snapshot.data?.length,
-              itemBuilder: (context, index) {
-                return PoliItem(poli: snapshot.data![index]);
-              });
-        },
-      ),
-    );
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  return PoliItem(poli: data[index]);
+                });
+          },
+        ));
   }
 
   Stream<List<Poli>> getList() async* {
