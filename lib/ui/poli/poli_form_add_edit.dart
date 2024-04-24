@@ -19,19 +19,22 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
   String titleToolbar = "";
   String titleButton = "";
 
+  var _isPoliNull = true;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     setState(() {
-      _namaPoliCtrl.text = (widget.poli != null ? widget.poli!.namaPoli : "");
+      _isPoliNull = widget.poli.isNull();
+      _namaPoliCtrl.text = (_isPoliNull == false ? widget.poli!.namaPoli : "");
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    titleToolbar = widget.poli != null ? "Ubah Poli" : "Tambah Poli";
-    titleButton = widget.poli != null ? "Simpan Perubahan" : "Simpan";
+    titleToolbar = _isPoliNull == false ? "Ubah Poli" : "Tambah Poli";
+    titleButton = _isPoliNull == false ? "Simpan Perubahan" : "Simpan";
 
     return Scaffold(
       appBar: CustomAppBar(title: titleToolbar),
