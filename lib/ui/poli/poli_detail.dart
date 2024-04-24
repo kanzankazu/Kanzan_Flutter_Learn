@@ -3,7 +3,7 @@ import 'package:belajar_1/model/poli.dart';
 import 'package:belajar_1/ui/poli/poli_form_add_edit.dart';
 import 'package:belajar_1/ui/poli/poli_page.dart';
 import 'package:belajar_1/widget/custom_app_bar.dart';
-import 'package:belajar_1/widget/custom_stream_builder.dart';
+import 'package:belajar_1/widget/custom_future_builder.dart';
 import 'package:flutter/material.dart';
 
 class PoliDetail extends StatefulWidget {
@@ -28,8 +28,8 @@ class PoliDetailState extends State<PoliDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail Poli "),
-      body: CustomStreamBuilder(
-        stream: getById(poli.id ?? ""),
+      body: CustomFutureBuilder(
+        future: PoliService().getById(poli.id ?? ""),
         onSuccessWidget: (poli) {
           return poliDetailContain(poli);
         },

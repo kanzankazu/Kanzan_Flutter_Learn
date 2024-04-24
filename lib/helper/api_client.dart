@@ -3,8 +3,8 @@ import 'package:dio/dio.dart';
 Dio dio = Dio(
   BaseOptions(
     baseUrl: 'https://6626b505b625bf088c066de7.mockapi.io/',
-    connectTimeout: 5000,
-    receiveTimeout: 3000,
+    connectTimeout: const Duration(seconds: 10),
+    receiveTimeout: const Duration(seconds: 5),
   ),
 );
 
@@ -13,7 +13,7 @@ class ApiClient {
     try {
       final response = await dio.get(Uri.encodeFull(path));
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception(e.message);
     }
   }
@@ -22,7 +22,7 @@ class ApiClient {
     try {
       final response = await dio.post(Uri.encodeFull(path), data: data);
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception(e.message);
     }
   }
@@ -31,7 +31,7 @@ class ApiClient {
     try {
       final response = await dio.put(Uri.encodeFull(path), data: data);
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception(e.message);
     }
   }
@@ -40,7 +40,7 @@ class ApiClient {
     try {
       final response = await dio.delete(Uri.encodeFull(path));
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception(e.message);
     }
   }
