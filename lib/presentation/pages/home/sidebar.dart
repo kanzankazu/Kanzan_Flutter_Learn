@@ -72,6 +72,6 @@ class Sidebar extends StatelessWidget {
           },
         ),
       ),
-    );
+    ); //
   }
 }
