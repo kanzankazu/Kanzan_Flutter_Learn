@@ -59,13 +59,7 @@ class PoliDetailState extends State<PoliDetail> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   poliDetailUbahButton(),
-                  poliDetailHapusButton(
-                    callbackYes: () async {
-                      await PoliService().delete(poli).then((value) {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PoliPage()));
-                      });
-                    },
-                  ),
+                  poliDetailHapusButton(),
                 ],
               )
             ],
@@ -84,7 +78,7 @@ class PoliDetailState extends State<PoliDetail> {
         child: const Text("Ubah", style: TextStyle(color: Colors.black, decorationColor: Colors.green, decorationStyle: TextDecorationStyle.wavy)));
   }
 
-  poliDetailHapusButton({required Function() callbackYes}) {
+  poliDetailHapusButton() {
     return ElevatedButton(
         onPressed: () {
           showDialog(
@@ -94,7 +88,11 @@ class PoliDetailState extends State<PoliDetail> {
                   content: const Text("Yakin ingin menghapus data ini?"),
                   actions: [
                     ElevatedButton(
-                      onPressed: callbackYes(),
+                      onPressed: () async {
+                        await PoliService().delete(poli).then((value) {
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PoliPage()));
+                        });
+                      },
                       style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                       child: const Text("YA", style: TextStyle(color: Colors.black, decorationColor: Colors.green, decorationStyle: TextDecorationStyle.wavy)),
                     ),
