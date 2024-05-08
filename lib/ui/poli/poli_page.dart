@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:belajar_1/ui/poli/poli_detail.dart';
-import 'package:belajar_1/ui/poli/poli_form_add_edit.dart';
-import 'package:belajar_1/ui/poli/poli_item.dart';
-import 'package:belajar_1/ui/sidebar.dart';
-import 'package:belajar_1/widget/custom_app_bar.dart';
-import 'package:belajar_1/widget/custom_future_builder.dart';
+import 'package:belajar_flutter/ui/poli/poli_detail.dart';
+import 'package:belajar_flutter/ui/poli/poli_form_add_edit.dart';
+import 'package:belajar_flutter/ui/poli/poli_item.dart';
+import 'package:belajar_flutter/ui/sidebar.dart';
+import 'package:belajar_flutter/widget/custom_app_bar.dart';
+import 'package:belajar_flutter/widget/custom_future_builder.dart';
 import 'package:flutter/material.dart';
 
 import '../../helper/poli_service.dart';

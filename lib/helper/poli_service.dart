@@ -1,6 +1,6 @@
-import 'package:belajar_1/helper/api_client.dart';
-import 'package:belajar_1/model/poli.dart';
-import 'package:belajar_1/model/poli_response.dart';
+import 'package:belajar_flutter/helper/api_client.dart';
+import 'package:belajar_flutter/model/poli.dart';
+import 'package:belajar_flutter/model/poli_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 

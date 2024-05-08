@@ -1,4 +1,4 @@
-import 'package:belajar_1/ui/beranda.dart';
+import 'package:belajar_flutter/ui/beranda.dart';
 import 'package:flutter/material.dart';
 
 import '../helper/login_service.dart';

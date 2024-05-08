@@ -1,4 +1,4 @@
-package com.kanzankazu.belajar_1
+package com.kanzankazu.belajar_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 

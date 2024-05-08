@@ -1,4 +1,4 @@
-import 'package:belajar_1/helper/user_info.dart';
+import 'package:belajar_flutter/helper/user_info.dart';
 
 class LoginService {
   Future<(bool, String)> login(String username, String password) async {

@@ -1,5 +1,5 @@
-import 'package:belajar_1/model/pegawai.dart';
-import 'package:belajar_1/ui/pegawai/pegawai_detail.dart';
+import 'package:belajar_flutter/model/pegawai.dart';
+import 'package:belajar_flutter/ui/pegawai/pegawai_detail.dart';
 import 'package:flutter/material.dart';
 
 class PegawaiItem extends StatelessWidget {

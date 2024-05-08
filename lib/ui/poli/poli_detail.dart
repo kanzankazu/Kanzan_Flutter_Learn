@@ -1,9 +1,9 @@
-import 'package:belajar_1/helper/poli_service.dart';
-import 'package:belajar_1/model/poli.dart';
-import 'package:belajar_1/ui/poli/poli_form_add_edit.dart';
-import 'package:belajar_1/ui/poli/poli_page.dart';
-import 'package:belajar_1/widget/custom_app_bar.dart';
-import 'package:belajar_1/widget/custom_future_builder.dart';
+import 'package:belajar_flutter/helper/poli_service.dart';
+import 'package:belajar_flutter/model/poli.dart';
+import 'package:belajar_flutter/ui/poli/poli_form_add_edit.dart';
+import 'package:belajar_flutter/ui/poli/poli_page.dart';
+import 'package:belajar_flutter/widget/custom_app_bar.dart';
+import 'package:belajar_flutter/widget/custom_future_builder.dart';
 import 'package:flutter/material.dart';
 
 class PoliDetail extends StatefulWidget {

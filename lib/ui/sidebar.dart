@@ -1,8 +1,8 @@
-import 'package:belajar_1/ui/beranda.dart';
-import 'package:belajar_1/ui/login.dart';
-import 'package:belajar_1/ui/pasien/pasien_page.dart';
-import 'package:belajar_1/ui/pegawai/pegawai_page.dart';
-import 'package:belajar_1/ui/poli/poli_page.dart';
+import 'package:belajar_flutter/ui/beranda.dart';
+import 'package:belajar_flutter/ui/login.dart';
+import 'package:belajar_flutter/ui/pasien/pasien_page.dart';
+import 'package:belajar_flutter/ui/pegawai/pegawai_page.dart';
+import 'package:belajar_flutter/ui/poli/poli_page.dart';
 import 'package:flutter/material.dart';
 
 import '../helper/login_service.dart';
