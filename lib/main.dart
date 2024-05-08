@@ -1,6 +1,6 @@
-import 'package:belajar_1/helper/user_info.dart';
-import 'package:belajar_1/ui/beranda.dart';
-import 'package:belajar_1/ui/login.dart';
+import 'package:belajar_flutter/helper/user_info.dart';
+import 'package:belajar_flutter/ui/beranda.dart';
+import 'package:belajar_flutter/ui/login.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

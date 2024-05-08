@@ -1,7 +1,7 @@
-import 'package:belajar_1/model/poli.dart';
-import 'package:belajar_1/ui/poli/poli_detail.dart';
-import 'package:belajar_1/widget/custom_app_bar.dart';
-import 'package:belajar_1/widget/custom_gesturedetector_card.dart';
+import 'package:belajar_flutter/model/poli.dart';
+import 'package:belajar_flutter/ui/poli/poli_detail.dart';
+import 'package:belajar_flutter/widget/custom_app_bar.dart';
+import 'package:belajar_flutter/widget/custom_gesturedetector_card.dart';
 import 'package:flutter/material.dart';
 
 class PasienPage extends StatefulWidget {

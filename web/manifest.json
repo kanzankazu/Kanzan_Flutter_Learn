@@ -1,6 +1,6 @@
 {
-    "name": "belajar_1",
-    "short_name": "belajar_1",
+  "name": "belajar_flutter",
+  "short_name": "belajar_flutter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

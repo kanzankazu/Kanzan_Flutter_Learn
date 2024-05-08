@@ -1,4 +1,4 @@
-import 'package:belajar_1/model/poli.dart';
+import 'package:belajar_flutter/model/poli.dart';
 
 class PoliResponse {
   String? id;
