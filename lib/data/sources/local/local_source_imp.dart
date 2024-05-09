@@ -1,5 +1,5 @@
-import 'package:belajar_1/data/models/item_response.dart';
-import 'package:belajar_1/data/sources/local/local_source.dart';
+import 'package:belajar_flutter/data/models/item_response.dart';
+import 'package:belajar_flutter/data/sources/local/local_source.dart';
 
 class LocalSourceImp implements LocalSource {
   @override

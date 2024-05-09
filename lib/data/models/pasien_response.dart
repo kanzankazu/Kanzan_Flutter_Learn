@@ -1,4 +1,4 @@
-import 'package:belajar_1/domain/entities/pasien.dart';
+import 'package:belajar_flutter/domain/entities/pasien.dart';
 
 class PasienResponse {
   PasienResponse({

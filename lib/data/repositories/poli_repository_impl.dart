@@ -1,10 +1,10 @@
-import 'package:belajar_1/core/error/exceptions.dart';
-import 'package:belajar_1/core/error/failure.dart';
-import 'package:belajar_1/core/services/network/internet_info.dart';
-import 'package:belajar_1/core/utils/multiple_result.dart';
-import 'package:belajar_1/data/sources/server/poli_source_impl.dart';
-import 'package:belajar_1/domain/entities/poli.dart';
-import 'package:belajar_1/domain/repositories/poli_repository.dart';
+import 'package:belajar_flutter/core/error/exceptions.dart';
+import 'package:belajar_flutter/core/error/failure.dart';
+import 'package:belajar_flutter/core/services/network/internet_info.dart';
+import 'package:belajar_flutter/core/utils/multiple_result.dart';
+import 'package:belajar_flutter/data/sources/server/poli_source_impl.dart';
+import 'package:belajar_flutter/domain/entities/poli.dart';
+import 'package:belajar_flutter/domain/repositories/poli_repository.dart';
 
 class PoliRepositoryImpl implements PoliRepository {
   PoliRepositoryImpl({required this.poliSource, required this.internetInfo});

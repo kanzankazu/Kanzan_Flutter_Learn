@@ -1,8 +1,8 @@
 import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
-import 'package:belajar_1/di/injections.dart';
-import 'package:belajar_1/domain/entities/request/login_request.dart';
-import 'package:belajar_1/presentation/bloc/login/login_logout_bloc.dart';
-import 'package:belajar_1/presentation/pages/home/beranda.dart';
+import 'package:belajar_flutter/di/injections.dart';
+import 'package:belajar_flutter/domain/entities/request/login_request.dart';
+import 'package:belajar_flutter/presentation/bloc/login/login_logout_bloc.dart';
+import 'package:belajar_flutter/presentation/pages/home/beranda.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

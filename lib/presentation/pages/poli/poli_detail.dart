@@ -1,9 +1,9 @@
-import 'package:belajar_1/core/utils/generics/bloc_status.dart';
-import 'package:belajar_1/domain/entities/poli.dart';
-import 'package:belajar_1/presentation/bloc/poli/poli_bloc.dart';
-import 'package:belajar_1/presentation/pages/poli/poli_form_add_edit.dart';
-import 'package:belajar_1/presentation/pages/poli/poli_page.dart';
-import 'package:belajar_1/presentation/pages/widget/custom_app_bar.dart';
+import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
+import 'package:belajar_flutter/domain/entities/poli.dart';
+import 'package:belajar_flutter/presentation/bloc/poli/poli_bloc.dart';
+import 'package:belajar_flutter/presentation/pages/poli/poli_form_add_edit.dart';
+import 'package:belajar_flutter/presentation/pages/poli/poli_page.dart';
+import 'package:belajar_flutter/presentation/pages/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

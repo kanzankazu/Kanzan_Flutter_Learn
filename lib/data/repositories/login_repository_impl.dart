@@ -1,7 +1,7 @@
-import 'package:belajar_1/core/error/failure.dart';
-import 'package:belajar_1/core/utils/multiple_result.dart';
-import 'package:belajar_1/data/sources/local/user_local_source.dart';
-import 'package:belajar_1/domain/repositories/login_repository.dart';
+import 'package:belajar_flutter/core/error/failure.dart';
+import 'package:belajar_flutter/core/utils/multiple_result.dart';
+import 'package:belajar_flutter/data/sources/local/user_local_source.dart';
+import 'package:belajar_flutter/domain/repositories/login_repository.dart';
 
 class LoginRepositoryImpl implements LoginRepository {
   LoginRepositoryImpl({required this.userLocalSource});

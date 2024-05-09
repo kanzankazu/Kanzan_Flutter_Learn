@@ -1,4 +1,4 @@
-import 'package:belajar_1/domain/entities/pegawai.dart';
+import 'package:belajar_flutter/domain/entities/pegawai.dart';
 
 class PegawaiResponse {
   PegawaiResponse({

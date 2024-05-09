@@ -1,7 +1,7 @@
-import 'package:belajar_1/presentation/pages/detail/pages/detail_page.dart';
-import 'package:belajar_1/presentation/pages/home/pages/home_page.dart';
-import 'package:belajar_1/presentation/pages/login/pages/login.dart';
-import 'package:belajar_1/presentation/pages/notfound/not_found_page.dart';
+import 'package:belajar_flutter/presentation/pages/detail/pages/detail_page.dart';
+import 'package:belajar_flutter/presentation/pages/home/pages/home_page.dart';
+import 'package:belajar_flutter/presentation/pages/login/pages/login.dart';
+import 'package:belajar_flutter/presentation/pages/notfound/not_found_page.dart';
 import 'package:flutter/material.dart';
 
 abstract class Routes {

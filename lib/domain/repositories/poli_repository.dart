@@ -1,6 +1,6 @@
-import 'package:belajar_1/core/error/failure.dart';
-import 'package:belajar_1/core/utils/multiple_result.dart';
-import 'package:belajar_1/domain/entities/poli.dart';
+import 'package:belajar_flutter/core/error/failure.dart';
+import 'package:belajar_flutter/core/utils/multiple_result.dart';
+import 'package:belajar_flutter/domain/entities/poli.dart';
 
 abstract class PoliRepository {
   Future<Result<Failure, List<Poli>>> getList();

@@ -1,9 +1,9 @@
-import 'package:belajar_1/core/error/failure.dart';
-import 'package:belajar_1/core/services/network/internet_info.dart';
-import 'package:belajar_1/core/utils/multiple_result.dart';
-import 'package:belajar_1/data/sources/server/pasien_source_impl.dart';
-import 'package:belajar_1/domain/entities/pasien.dart';
-import 'package:belajar_1/domain/repositories/pasien_repository.dart';
+import 'package:belajar_flutter/core/error/failure.dart';
+import 'package:belajar_flutter/core/services/network/internet_info.dart';
+import 'package:belajar_flutter/core/utils/multiple_result.dart';
+import 'package:belajar_flutter/data/sources/server/pasien_source_impl.dart';
+import 'package:belajar_flutter/domain/entities/pasien.dart';
+import 'package:belajar_flutter/domain/repositories/pasien_repository.dart';
 
 class PasienRepositoryImpl implements PasienRepository {
   PasienRepositoryImpl({required this.poliSource, required this.internetInfo});

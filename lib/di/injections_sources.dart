@@ -1,12 +1,12 @@
-import 'package:belajar_1/data/sources/api/api_client.dart';
-import 'package:belajar_1/data/sources/local/local_source.dart';
-import 'package:belajar_1/data/sources/local/local_source_imp.dart';
-import 'package:belajar_1/data/sources/local/user_local_source.dart';
-import 'package:belajar_1/data/sources/local/user_local_source_impl.dart';
-import 'package:belajar_1/data/sources/server/item_source_imp.dart';
-import 'package:belajar_1/data/sources/server/pasien_source_impl.dart';
-import 'package:belajar_1/data/sources/server/pegawai_source_impl.dart';
-import 'package:belajar_1/data/sources/server/poli_source_impl.dart';
+import 'package:belajar_flutter/data/sources/api/api_client.dart';
+import 'package:belajar_flutter/data/sources/local/local_source.dart';
+import 'package:belajar_flutter/data/sources/local/local_source_imp.dart';
+import 'package:belajar_flutter/data/sources/local/user_local_source.dart';
+import 'package:belajar_flutter/data/sources/local/user_local_source_impl.dart';
+import 'package:belajar_flutter/data/sources/server/item_source_imp.dart';
+import 'package:belajar_flutter/data/sources/server/pasien_source_impl.dart';
+import 'package:belajar_flutter/data/sources/server/pegawai_source_impl.dart';
+import 'package:belajar_flutter/data/sources/server/poli_source_impl.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 

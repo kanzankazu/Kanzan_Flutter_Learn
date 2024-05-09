@@ -1,11 +1,11 @@
-import 'package:belajar_1/core/error/exceptions.dart';
-import 'package:belajar_1/core/error/failure.dart';
-import 'package:belajar_1/core/services/network/internet_info.dart';
-import 'package:belajar_1/core/utils/multiple_result.dart';
-import 'package:belajar_1/data/sources/local/local_source.dart';
-import 'package:belajar_1/data/sources/server/item_source_imp.dart';
-import 'package:belajar_1/domain/entities/item.dart';
-import 'package:belajar_1/domain/repositories/item_repository.dart';
+import 'package:belajar_flutter/core/error/exceptions.dart';
+import 'package:belajar_flutter/core/error/failure.dart';
+import 'package:belajar_flutter/core/services/network/internet_info.dart';
+import 'package:belajar_flutter/core/utils/multiple_result.dart';
+import 'package:belajar_flutter/data/sources/local/local_source.dart';
+import 'package:belajar_flutter/data/sources/server/item_source_imp.dart';
+import 'package:belajar_flutter/domain/entities/item.dart';
+import 'package:belajar_flutter/domain/repositories/item_repository.dart';
 
 class ItemRepositoryImp implements ItemRepository {
   const ItemRepositoryImp({

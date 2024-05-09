@@ -1,12 +1,12 @@
-import 'package:belajar_1/core/error/failure.dart';
-import 'package:belajar_1/core/utils/generics/bloc_status.dart';
-import 'package:belajar_1/core/utils/generics/no_input.dart';
-import 'package:belajar_1/domain/entities/poli.dart';
-import 'package:belajar_1/domain/usecase/poli/delete_poli_usecase.dart';
-import 'package:belajar_1/domain/usecase/poli/edit_poli_usecase.dart';
-import 'package:belajar_1/domain/usecase/poli/get_poli_by_id_usecase.dart';
-import 'package:belajar_1/domain/usecase/poli/get_poli_list_usecase.dart';
-import 'package:belajar_1/domain/usecase/poli/save_poli_usecase.dart';
+import 'package:belajar_flutter/core/error/failure.dart';
+import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
+import 'package:belajar_flutter/core/utils/generics/no_input.dart';
+import 'package:belajar_flutter/domain/entities/poli.dart';
+import 'package:belajar_flutter/domain/usecase/poli/delete_poli_usecase.dart';
+import 'package:belajar_flutter/domain/usecase/poli/edit_poli_usecase.dart';
+import 'package:belajar_flutter/domain/usecase/poli/get_poli_by_id_usecase.dart';
+import 'package:belajar_flutter/domain/usecase/poli/get_poli_list_usecase.dart';
+import 'package:belajar_flutter/domain/usecase/poli/save_poli_usecase.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

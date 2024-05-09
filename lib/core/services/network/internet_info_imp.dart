@@ -1,4 +1,4 @@
-import 'package:belajar_1/core/services/network/internet_info.dart';
+import 'package:belajar_flutter/core/services/network/internet_info.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class InternetInfoImpl implements InternetInfo {

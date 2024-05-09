@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:belajar_1/core/error/exceptions.dart';
-import 'package:belajar_1/data/models/poli_response.dart';
-import 'package:belajar_1/data/sources/api/api_client.dart';
-import 'package:belajar_1/domain/entities/poli.dart';
+import 'package:belajar_flutter/core/error/exceptions.dart';
+import 'package:belajar_flutter/data/models/poli_response.dart';
+import 'package:belajar_flutter/data/sources/api/api_client.dart';
+import 'package:belajar_flutter/domain/entities/poli.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 

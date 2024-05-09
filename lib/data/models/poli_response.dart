@@ -1,4 +1,4 @@
-import 'package:belajar_1/domain/entities/poli.dart';
+import 'package:belajar_flutter/domain/entities/poli.dart';
 
 class PoliResponse {
   PoliResponse({

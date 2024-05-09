@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:belajar_1/core/constants/network_path.dart';
-import 'package:belajar_1/core/error/exceptions.dart';
-import 'package:belajar_1/data/models/item_response.dart';
+import 'package:belajar_flutter/core/constants/network_path.dart';
+import 'package:belajar_flutter/core/error/exceptions.dart';
+import 'package:belajar_flutter/data/models/item_response.dart';
 import 'package:http/http.dart' as http;
 
 abstract class ItemSource {

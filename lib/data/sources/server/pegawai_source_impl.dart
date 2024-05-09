@@ -1,6 +1,6 @@
-import 'package:belajar_1/data/models/pegawai_response.dart';
-import 'package:belajar_1/data/sources/api/api_client.dart';
-import 'package:belajar_1/domain/entities/pegawai.dart';
+import 'package:belajar_flutter/data/models/pegawai_response.dart';
+import 'package:belajar_flutter/data/sources/api/api_client.dart';
+import 'package:belajar_flutter/domain/entities/pegawai.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 

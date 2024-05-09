@@ -1,9 +1,9 @@
-import 'package:belajar_1/core/error/failure.dart';
-import 'package:belajar_1/core/utils/generics/bloc_status.dart';
-import 'package:belajar_1/core/utils/generics/no_input.dart';
-import 'package:belajar_1/domain/entities/item.dart';
-import 'package:belajar_1/domain/usecase/items/get_item_by_id_usecase.dart';
-import 'package:belajar_1/domain/usecase/items/get_item_list_usecase.dart';
+import 'package:belajar_flutter/core/error/failure.dart';
+import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
+import 'package:belajar_flutter/core/utils/generics/no_input.dart';
+import 'package:belajar_flutter/domain/entities/item.dart';
+import 'package:belajar_flutter/domain/usecase/items/get_item_by_id_usecase.dart';
+import 'package:belajar_flutter/domain/usecase/items/get_item_list_usecase.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,5 +1,5 @@
-import 'package:belajar_1/core/constants/shared_preferences_keys.dart';
-import 'package:belajar_1/data/sources/local/user_local_source.dart';
+import 'package:belajar_flutter/core/constants/shared_preferences_keys.dart';
+import 'package:belajar_flutter/data/sources/local/user_local_source.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserLocalSourceImpl implements UserLocalSource {

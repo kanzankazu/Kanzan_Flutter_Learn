@@ -1,9 +1,9 @@
 import 'package:belajar_flutter/data/sources/local/user_local_source_impl.dart';
 import 'package:belajar_flutter/di/injections.dart';
-import 'package:belajar_1/presentation/bloc/login/login_logout_bloc.dart';
-import 'package:belajar_1/presentation/pages/home/beranda.dart';
+import 'package:belajar_flutter/presentation/bloc/login/login_logout_bloc.dart';
+import 'package:belajar_flutter/presentation/pages/home/beranda.dart';
 import 'package:belajar_flutter/presentation/pages/login/pages/login.dart';
-import 'package:belajar_1/single_bloc_observer.dart';
+import 'package:belajar_flutter/single_bloc_observer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
