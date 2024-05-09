@@ -1,3 +1,5 @@
+import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
+import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/domain/entities/poli.dart';
 import 'package:belajar_flutter/presentation/bloc/poli/poli_bloc.dart';
 import 'package:belajar_flutter/presentation/pages/poli/poli_detail.dart';
@@ -40,22 +42,49 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
     titleToolbar = _isPoliNull ? "Tambah Poli" : "Ubah Poli";
     titleButton = _isPoliNull ? "Simpan" : "Simpan Perubahan";
 
-    return Scaffold(
-      appBar: CustomAppBar(title: titleToolbar),
-      body: SingleChildScrollView(
-        child: Form(
-            key: formKey,
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              child: Card(
-                child: Container(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    children: [_fieldNamaPoli(), _tombolSimpan()],
-                  ),
-                ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => getIt<PoliBloc>()),
+      ],
+      child: BlocConsumer<PoliBloc, PoliBlocState>(
+        listener: (context, state) {
+          if (state.status == Status.serverError) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                backgroundColor: Colors.red,
+                content: Text("Server Error"),
               ),
-            )),
+            );
+          }
+          if (state.status == Status.networkError) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                backgroundColor: Colors.red,
+                content: Text("Not connected"),
+              ),
+            );
+          }
+        },
+        builder: (context, state) {
+          return Scaffold(
+            appBar: CustomAppBar(title: titleToolbar),
+            body: SingleChildScrollView(
+              child: Form(
+                  key: formKey,
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    child: Card(
+                      child: Container(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          children: [_fieldNamaPoli(), _tombolSimpan(context)],
+                        ),
+                      ),
+                    ),
+                  )),
+            ),
+          );
+        },
       ),
     );
   }
@@ -70,7 +99,7 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
     );
   }
 
-  _tombolSimpan() {
+  _tombolSimpan(BuildContext context) {
     return ElevatedButton(
         onPressed: () async {
           if (_isPoliNull) {

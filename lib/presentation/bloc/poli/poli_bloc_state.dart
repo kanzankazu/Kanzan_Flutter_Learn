@@ -3,26 +3,45 @@ part of 'poli_bloc.dart';
 class PoliBlocState extends Equatable {
   const PoliBlocState({
     required this.status,
-    this.datas,
-    this.data,
+    this.returnOnPoliGetList,
+    this.returnOnPoliGetItemById,
+    this.returnOnPoliSave,
+    this.returnOnPoliEdit,
+    this.returnOnPoliDelete,
   });
 
   final Status status;
-  final List<Poli>? datas;
-  final Poli? data;
+  final List<Poli>? returnOnPoliGetList;
+  final Poli? returnOnPoliGetItemById;
+  final Poli? returnOnPoliSave;
+  final Poli? returnOnPoliEdit;
+  final Poli? returnOnPoliDelete;
 
   @override
-  List<Object?> get props => [status, datas, data];
+  List<Object?> get props => [
+        status,
+        returnOnPoliGetList,
+        returnOnPoliGetItemById,
+        returnOnPoliSave,
+        returnOnPoliEdit,
+        returnOnPoliDelete,
+      ];
 
   PoliBlocState copyWith({
     Status? status,
-    List<Poli>? datas,
-    Poli? data,
+    List<Poli>? returnOnPoliGetList,
+    Poli? returnOnPoliGetItemById,
+    Poli? returnOnPoliSave,
+    Poli? returnOnPoliEdit,
+    Poli? returnOnPoliDelete,
   }) {
     return PoliBlocState(
       status: status ?? this.status,
-      datas: datas ?? this.datas,
-      data: data ?? this.data,
+      returnOnPoliGetList: returnOnPoliGetList ?? this.returnOnPoliGetList,
+      returnOnPoliGetItemById: returnOnPoliGetItemById ?? this.returnOnPoliGetItemById,
+      returnOnPoliSave: returnOnPoliSave ?? this.returnOnPoliSave,
+      returnOnPoliEdit: returnOnPoliEdit ?? this.returnOnPoliEdit,
+      returnOnPoliDelete: returnOnPoliDelete ?? this.returnOnPoliDelete,
     );
   }
 }

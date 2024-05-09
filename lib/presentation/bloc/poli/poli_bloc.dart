@@ -39,7 +39,7 @@ class PoliBloc extends Bloc<PoliBlocEvent, PoliBlocState> {
     var result = await getListPoliUseCase(NoInput());
 
     if (result.isSuccess()) {
-      emit(state.copyWith(status: Status.loaded, datas: result.getSuccess()));
+      emit(state.copyWith(status: Status.loaded, returnOnPoliGetList: result.getSuccess()));
     } else {
       if (result.getError() is ServerFailure) {
         emit(state.copyWith(status: Status.serverError));
@@ -54,7 +54,7 @@ class PoliBloc extends Bloc<PoliBlocEvent, PoliBlocState> {
     var result = await getByIdPoliUseCase(event.id);
 
     if (result.isSuccess()) {
-      emit(state.copyWith(status: Status.loaded, data: result.getSuccess()));
+      emit(state.copyWith(status: Status.loaded, returnOnPoliGetItemById: result.getSuccess()));
     } else {
       if (result.getError() is ServerFailure) {
         emit(state.copyWith(status: Status.serverError));
@@ -69,7 +69,7 @@ class PoliBloc extends Bloc<PoliBlocEvent, PoliBlocState> {
     var result = await savePoliUseCase(event.poli);
 
     if (result.isSuccess()) {
-      emit(state.copyWith(status: Status.loaded, data: result.getSuccess()));
+      emit(state.copyWith(status: Status.loaded, returnOnPoliSave: result.getSuccess()));
     } else {
       if (result.getError() is ServerFailure) {
         emit(state.copyWith(status: Status.serverError));
@@ -84,7 +84,7 @@ class PoliBloc extends Bloc<PoliBlocEvent, PoliBlocState> {
     var result = await editPoliUseCase(event.poli);
 
     if (result.isSuccess()) {
-      emit(state.copyWith(status: Status.loaded, data: result.getSuccess()));
+      emit(state.copyWith(status: Status.loaded, returnOnPoliEdit: result.getSuccess()));
     } else {
       if (result.getError() is ServerFailure) {
         emit(state.copyWith(status: Status.serverError));
@@ -99,7 +99,7 @@ class PoliBloc extends Bloc<PoliBlocEvent, PoliBlocState> {
     var result = await deletePoliUseCase(event.poli);
 
     if (result.isSuccess()) {
-      emit(state.copyWith(status: Status.loaded, data: result.getSuccess()));
+      emit(state.copyWith(status: Status.loaded, returnOnPoliDelete: result.getSuccess()));
     } else {
       if (result.getError() is ServerFailure) {
         emit(state.copyWith(status: Status.serverError));

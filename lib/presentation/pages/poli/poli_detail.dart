@@ -1,4 +1,5 @@
 import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
+import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/domain/entities/poli.dart';
 import 'package:belajar_flutter/presentation/bloc/poli/poli_bloc.dart';
 import 'package:belajar_flutter/presentation/pages/poli/poli_form_add_edit.dart';
@@ -27,36 +28,49 @@ class PoliDetailState extends State<PoliDetail> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(title: "Detail Poli "),
-      body: BlocConsumer<PoliBloc, PoliBlocState>(
-        listener: (context, state) {
-          if (state.status == Status.serverError) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                backgroundColor: Colors.red,
-                content: Text("Server Error"),
-              ),
-            );
-          }
-          if (state.status == Status.networkError) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                backgroundColor: Colors.red,
-                content: Text("Not connected "),
-              ),
-            );
-          }
-        },
-        builder: (context, state) {
-          if (state.status == Status.empty) {
-            return const Center(child: Text("Empty"));
-          } else if (state.status == Status.loading) {
-            return const Center(child: Text("Loading ..."));
-          } else {
-            return poliDetailContain(state.data!);
-          }
-        },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => getIt<PoliBloc>()..add(OnPoliGetItemById(id: poli.id ?? ""))),
+      ],
+      child: Scaffold(
+        appBar: const CustomAppBar(title: "Detail Poli "),
+        body: BlocConsumer<PoliBloc, PoliBlocState>(
+          listener: (context, state) {
+            if (state.status == Status.serverError) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  backgroundColor: Colors.red,
+                  content: Text("Server Error"),
+                ),
+              );
+            }
+            if (state.status == Status.networkError) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  backgroundColor: Colors.red,
+                  content: Text("Not connected "),
+                ),
+              );
+            }
+            if (state.status == Status.loaded && state.returnOnPoliGetItemById == null) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  backgroundColor: Colors.red,
+                  content: Text("Data Empty "),
+                ),
+              );
+            }
+          },
+          builder: (context, state) {
+            if (state.status == Status.empty) {
+              return const Center(child: Text("Empty"));
+            } else if (state.status == Status.loading) {
+              return const Center(child: CircularProgressIndicator());
+            } else {
+              return poliDetailContain(state.returnOnPoliGetItemById!);
+            }
+          },
+        ),
       ),
     );
   }

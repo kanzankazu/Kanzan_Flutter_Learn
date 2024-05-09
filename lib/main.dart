@@ -13,10 +13,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   var token = await UserLocalSourceImpl().getToken();
   if (kDebugMode) print(token);
-  BlocOverrides.runZoned(
-    () => runApp(MyApp(token: token)),
-    blocObserver: SimpleBlocObserver(),
-  );
+  Bloc.observer = SimpleBlocObserver();
+  runApp(MyApp(token: token));
 }
 
 class MyApp extends StatelessWidget {

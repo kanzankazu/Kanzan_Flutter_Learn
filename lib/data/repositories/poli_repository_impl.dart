@@ -16,8 +16,8 @@ class PoliRepositoryImpl implements PoliRepository {
   Future<Result<Failure, List<Poli>>> getList() async {
     try {
       if (await internetInfo.hasConnection()) {
-        var result = poliSource.getList();
-        return Success(result as List<Poli>);
+        final result = await poliSource.getList();
+        return Success(result);
       } else {
         return Error(NotConnectedFailure());
       }
@@ -30,8 +30,8 @@ class PoliRepositoryImpl implements PoliRepository {
   Future<Result<Failure, Poli>> getById(String id) async {
     try {
       if (await internetInfo.hasConnection()) {
-        var result = poliSource.getById(id);
-        return Success(result as Poli);
+        final result = await poliSource.getById(id);
+        return Success(result);
       } else {
         return Error(NotConnectedFailure());
       }
@@ -44,8 +44,8 @@ class PoliRepositoryImpl implements PoliRepository {
   Future<Result<Failure, Poli>> save(Poli poli) async {
     try {
       if (await internetInfo.hasConnection()) {
-        var result = poliSource.getList();
-        return Success(result as Poli);
+        final result = await poliSource.save(poli);
+        return Success(result);
       } else {
         return Error(NotConnectedFailure());
       }
@@ -58,8 +58,8 @@ class PoliRepositoryImpl implements PoliRepository {
   Future<Result<Failure, Poli>> edit(Poli poli, String id) async {
     try {
       if (await internetInfo.hasConnection()) {
-        var result = poliSource.getList();
-        return Success(result as Poli);
+        final result = await poliSource.edit(poli, id);
+        return Success(result);
       } else {
         return Error(NotConnectedFailure());
       }
@@ -72,8 +72,8 @@ class PoliRepositoryImpl implements PoliRepository {
   Future<Result<Failure, Poli>> delete(Poli poli) async {
     try {
       if (await internetInfo.hasConnection()) {
-        var result = poliSource.getList();
-        return Success(result as Poli);
+        final result = await poliSource.delete(poli);
+        return Success(result);
       } else {
         return Error(NotConnectedFailure());
       }
