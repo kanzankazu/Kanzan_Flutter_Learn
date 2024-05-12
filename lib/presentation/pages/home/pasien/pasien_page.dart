@@ -1,8 +1,9 @@
 import 'package:belajar_flutter/domain/entities/poli.dart';
-import 'package:belajar_flutter/presentation/pages/poli/poli_detail.dart';
 import 'package:belajar_flutter/presentation/pages/widget/custom_app_bar.dart';
 import 'package:belajar_flutter/presentation/pages/widget/custom_gesturedetector_card.dart';
 import 'package:flutter/material.dart';
+
+import '../poli/poli_detail.dart';
 
 class PasienPage extends StatefulWidget {
   const PasienPage({super.key});

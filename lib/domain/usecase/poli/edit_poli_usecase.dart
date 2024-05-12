@@ -1,8 +1,8 @@
-import 'package:belajar_flutter/core/error/failure.dart';
-import 'package:belajar_flutter/core/utils/generics/usecase.dart';
-import 'package:belajar_flutter/core/utils/multiple_result.dart';
-import 'package:belajar_flutter/domain/entities/poli.dart';
-import 'package:belajar_flutter/domain/repositories/poli_repository.dart';
+import '../../../common/error/failure.dart';
+import '../../../common/utils/generics/usecase.dart';
+import '../../../common/utils/multiple_result.dart';
+import '../../entities/poli.dart';
+import '../../repositories/poli_repository.dart';
 
 class EditPoliUseCase implements UseCase<Poli, Poli> {
   final PoliRepository repository;

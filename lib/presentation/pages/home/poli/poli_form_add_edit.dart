@@ -1,11 +1,12 @@
-import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
 import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/domain/entities/poli.dart';
 import 'package:belajar_flutter/presentation/bloc/poli/poli_bloc.dart';
-import 'package:belajar_flutter/presentation/pages/poli/poli_detail.dart';
 import 'package:belajar_flutter/presentation/pages/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../common/utils/generics/bloc_status.dart';
+import 'poli_detail.dart';
 
 class PoliFormAddEdit extends StatefulWidget {
   const PoliFormAddEdit({super.key, this.poli});

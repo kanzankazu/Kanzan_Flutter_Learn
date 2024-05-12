@@ -1,9 +1,10 @@
-import 'package:belajar_flutter/core/error/failure.dart';
-import 'package:belajar_flutter/core/utils/generics/no_input.dart';
-import 'package:belajar_flutter/core/utils/generics/usecase.dart';
-import 'package:belajar_flutter/core/utils/multiple_result.dart';
 import 'package:belajar_flutter/domain/entities/poli.dart';
 import 'package:belajar_flutter/domain/repositories/poli_repository.dart';
+
+import '../../../common/error/failure.dart';
+import '../../../common/utils/generics/no_input.dart';
+import '../../../common/utils/generics/usecase.dart';
+import '../../../common/utils/multiple_result.dart';
 
 class GetListPoliUseCase implements UseCase<List<Poli>, NoInput> {
   final PoliRepository repository;

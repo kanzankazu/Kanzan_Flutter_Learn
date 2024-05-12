@@ -1,8 +1,5 @@
-import 'package:belajar_flutter/domain/repositories/item_repository.dart';
 import 'package:belajar_flutter/domain/repositories/login_repository.dart';
 import 'package:belajar_flutter/domain/repositories/poli_repository.dart';
-import 'package:belajar_flutter/domain/usecase/items/get_item_by_id_usecase.dart';
-import 'package:belajar_flutter/domain/usecase/items/get_item_list_usecase.dart';
 import 'package:belajar_flutter/domain/usecase/login/login_usecase.dart';
 import 'package:belajar_flutter/domain/usecase/login/logout_usecase.dart';
 import 'package:belajar_flutter/domain/usecase/poli/delete_poli_usecase.dart';
@@ -13,9 +10,6 @@ import 'package:belajar_flutter/domain/usecase/poli/save_poli_usecase.dart';
 import 'package:get_it/get_it.dart';
 
 void setupUseCases(GetIt getIt) {
-  //ITEM
-  getIt.registerLazySingleton<GetItemListUseCase>(() => GetItemListUseCase(repository: getIt<ItemRepository>()));
-  getIt.registerLazySingleton<GetItemByIdUseCase>(() => GetItemByIdUseCase(repository: getIt<ItemRepository>()));
   //LOGIN
   getIt.registerLazySingleton(() => LoginUseCase(loginRepository: getIt<LoginRepository>()));
   getIt.registerLazySingleton(() => LogoutUsecase(loginRepository: getIt<LoginRepository>()));

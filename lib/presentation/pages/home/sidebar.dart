@@ -1,13 +1,14 @@
-import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
 import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/presentation/bloc/login/login_logout_bloc.dart';
 import 'package:belajar_flutter/presentation/pages/home/beranda.dart';
+import 'package:belajar_flutter/presentation/pages/home/poli/poli_page.dart';
 import 'package:belajar_flutter/presentation/pages/login/pages/login.dart';
-import 'package:belajar_flutter/presentation/pages/pasien/pasien_page.dart';
-import 'package:belajar_flutter/presentation/pages/pegawai/pegawai_page.dart';
-import 'package:belajar_flutter/presentation/pages/poli/poli_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../common/utils/generics/bloc_status.dart';
+import 'pasien/pasien_page.dart';
+import 'pegawai/pegawai_page.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});

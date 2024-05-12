@@ -1,7 +1,7 @@
-import 'package:belajar_flutter/core/error/exceptions.dart';
-import 'package:belajar_flutter/core/error/failure.dart';
-import 'package:belajar_flutter/core/services/network/internet_info.dart';
-import 'package:belajar_flutter/core/utils/multiple_result.dart';
+import 'package:belajar_flutter/common/error/exceptions.dart';
+import 'package:belajar_flutter/common/error/failure.dart';
+import 'package:belajar_flutter/common/services/network/internet_info.dart';
+import 'package:belajar_flutter/common/utils/multiple_result.dart';
 import 'package:belajar_flutter/data/sources/server/poli_source_impl.dart';
 import 'package:belajar_flutter/domain/entities/poli.dart';
 import 'package:belajar_flutter/domain/repositories/poli_repository.dart';

@@ -1,7 +1,6 @@
-import 'package:belajar_flutter/presentation/pages/detail/pages/detail_page.dart';
-import 'package:belajar_flutter/presentation/pages/home/pages/home_page.dart';
+import 'package:belajar_flutter/presentation/pages/home/beranda.dart';
 import 'package:belajar_flutter/presentation/pages/login/pages/login.dart';
-import 'package:belajar_flutter/presentation/pages/notfound/not_found_page.dart';
+import 'package:belajar_flutter/presentation/pages/widget/not_found_page.dart';
 import 'package:flutter/material.dart';
 
 abstract class Routes {
@@ -14,8 +13,7 @@ abstract class Routes {
 abstract class AppRoute {
   static String initial = Routes.home;
   static Map<String, Widget Function(BuildContext)> routes = {
-    Routes.home: (context) => const HomePage(),
-    Routes.detail: (context) => const DetailPage(),
+    Routes.home: (context) => const Beranda(),
     Routes.login: (context) => const Login(),
     Routes.notFound: (context) => const NotFound(),
   };

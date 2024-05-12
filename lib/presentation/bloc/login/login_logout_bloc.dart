@@ -1,13 +1,14 @@
 import 'dart:async';
 
-import 'package:belajar_flutter/core/error/failure.dart';
-import 'package:belajar_flutter/core/utils/generics/bloc_status.dart';
-import 'package:belajar_flutter/core/utils/generics/no_input.dart';
 import 'package:belajar_flutter/domain/entities/request/login_request.dart';
 import 'package:belajar_flutter/domain/usecase/login/login_usecase.dart';
 import 'package:belajar_flutter/domain/usecase/login/logout_usecase.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../common/error/failure.dart';
+import '../../../common/utils/generics/bloc_status.dart';
+import '../../../common/utils/generics/no_input.dart';
 
 part 'login_logout_bloc_event.dart';
 part 'login_logout_bloc_state.dart';
