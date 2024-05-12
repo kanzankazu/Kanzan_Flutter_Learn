@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../common/utils/generics/bloc_status.dart';
-import 'pasien/pasien_page.dart';
 import 'pegawai/pegawai_page.dart';
 
 class Sidebar extends StatelessWidget {
@@ -54,13 +53,13 @@ class Sidebar extends StatelessWidget {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PegawaiPage()));
                   },
                 ),
-                ListTile(
+                /*ListTile(
                   leading: const Icon(Icons.account_box_sharp),
                   title: const Text("Pasien"),
                   onTap: () {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PasienPage()));
                   },
-                ),
+                ),*/
                 ListTile(
                   leading: const Icon(Icons.logout_rounded),
                   title: const Text("Keluar"),
