@@ -1,3 +1,4 @@
+import 'package:belajar_flutter/common/utils/generics/bloc_status_util.dart';
 import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/presentation/bloc/poli/poli_bloc.dart';
 import 'package:belajar_flutter/presentation/pages/home/poli/poli_detail.dart';
@@ -39,23 +40,8 @@ class PoliPageState extends State<PoliPage> {
           body: Center(
             child: BlocConsumer<PoliBloc, PoliBlocState>(
               listener: (context, state) {
-                if (state.status == Status.serverError) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      backgroundColor: Colors.red,
-                      content: Text("Server Error"),
-                    ),
-                  );
-                }
-                if (state.status == Status.networkError) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      backgroundColor: Colors.red,
-                      content: Text("Not connected"),
-                    ),
-                  );
-                }
-                if (state.status == Status.loaded && state.returnOnPoliGetList == null) {
+                handleStatus(context, state.status);
+                if (state.status.isLoaded() && state.returnOnPoliGetList == null) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       backgroundColor: Colors.red,
@@ -65,32 +51,41 @@ class PoliPageState extends State<PoliPage> {
                 }
               },
               builder: (context, state) {
-                return RefreshIndicator(
-                  onRefresh: () async {
-                    context.read<PoliBloc>().add(OnPoliGetList());
-                  },
-                  child: ListView.builder(
-                      physics: const AlwaysScrollableScrollPhysics(),
-                      padding: const EdgeInsets.all(8),
-                      itemCount: state.returnOnPoliGetList?.length ?? 0,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: state.returnOnPoliGetList![index]))).then((value) {
-                              context.read<PoliBloc>().add(OnPoliGetList());
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.only(bottom: 8),
-                            child: Card(
-                              child: ListTile(
-                                title: Text(state.returnOnPoliGetList?[index].namaPoli ?? ""),
+                if (state.status == Status.loading) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else {
+                  return RefreshIndicator(
+                    onRefresh: () async {
+                      context.read<PoliBloc>().add(OnPoliGetList());
+                    },
+                    child: ListView.builder(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        padding: const EdgeInsets.all(8),
+                        itemCount: state.returnOnPoliGetList?.length ?? 0,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => PoliDetail(poli: state.returnOnPoliGetList![index])),
+                              ).then((value) {
+                                context.read<PoliBloc>().add(OnPoliGetList());
+                              });
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.only(bottom: 8),
+                              child: Card(
+                                child: ListTile(
+                                  title: Text("Poli ${state.returnOnPoliGetList?[index].namaPoli}"),
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      }),
-                );
+                          );
+                        }),
+                  );
+                }
               },
             ),
           )),

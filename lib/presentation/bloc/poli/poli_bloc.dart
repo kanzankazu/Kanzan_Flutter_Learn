@@ -97,7 +97,7 @@ class PoliBloc extends Bloc<PoliBlocEvent, PoliBlocState> {
 
   Future<void> deletePoli(OnPoliDelete event, Emitter<PoliBlocState> emit) async {
     emit(state.copyWith(status: Status.loading));
-    var result = await deletePoliUseCase(event.poli);
+    var result = await deletePoliUseCase(event.id);
 
     if (result.isSuccess()) {
       emit(state.copyWith(status: Status.loaded, returnOnPoliDelete: result.getSuccess()));

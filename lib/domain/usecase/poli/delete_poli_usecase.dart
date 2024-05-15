@@ -5,7 +5,7 @@ import '../../../common/error/failure.dart';
 import '../../../common/utils/generics/usecase.dart';
 import '../../../common/utils/multiple_result.dart';
 
-class DeletePoliUseCase implements UseCase<Poli, Poli> {
+class DeletePoliUseCase implements UseCase<Poli, String> {
   final PoliRepository repository;
 
   DeletePoliUseCase({
@@ -13,7 +13,7 @@ class DeletePoliUseCase implements UseCase<Poli, Poli> {
   });
 
   @override
-  Future<Result<Failure, Poli>> call(Poli poli) {
-    return repository.delete(poli);
+  Future<Result<Failure, Poli>> call(String id) {
+    return repository.delete(id);
   }
 }

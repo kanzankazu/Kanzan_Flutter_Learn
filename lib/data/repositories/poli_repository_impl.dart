@@ -69,10 +69,10 @@ class PoliRepositoryImpl implements PoliRepository {
   }
 
   @override
-  Future<Result<Failure, Poli>> delete(Poli poli) async {
+  Future<Result<Failure, Poli>> delete(String id) async {
     try {
       if (await internetInfo.hasConnection()) {
-        final result = await poliSource.delete(poli);
+        final result = await poliSource.delete(id);
         return Success(result);
       } else {
         return Error(NotConnectedFailure());

@@ -50,7 +50,7 @@ class Sidebar extends StatelessWidget {
                   leading: const Icon(Icons.people),
                   title: const Text("Pegawai"),
                   onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PegawaiPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const PegawaiPage()));
                   },
                 ),
                 /*ListTile(

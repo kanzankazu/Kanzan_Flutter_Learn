@@ -16,7 +16,7 @@ abstract class PoliSource {
 
   Future<Poli> getById(String id);
 
-  Future<Poli> delete(Poli poli);
+  Future<Poli> delete(String id);
 }
 
 class PoliSourceImpl implements PoliSource {
@@ -73,8 +73,8 @@ class PoliSourceImpl implements PoliSource {
   }
 
   @override
-  Future<Poli> delete(Poli poli) async {
-    final Response response = await client.delete('poli/${poli.id}');
+  Future<Poli> delete(String id) async {
+    final Response response = await client.delete('poli/$id');
     PoliResponse result = PoliResponse.fromJson(response.data);
     var mapPoliResponseToPoli = result.mapPoliResponseToPoli();
     return mapPoliResponseToPoli;

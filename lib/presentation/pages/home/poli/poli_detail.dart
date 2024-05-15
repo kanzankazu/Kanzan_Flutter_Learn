@@ -68,7 +68,7 @@ class PoliDetailState extends State<PoliDetail> {
             } else if (state.status == Status.loading) {
               return const Center(child: CircularProgressIndicator());
             } else {
-              return poliDetailContain(state.returnOnPoliGetItemById!);
+              return poliDetailContain(state.returnOnPoliGetItemById!, context);
             }
           },
         ),
@@ -76,7 +76,7 @@ class PoliDetailState extends State<PoliDetail> {
     );
   }
 
-  poliDetailContain(Poli poli) {
+  poliDetailContain(Poli poli, BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       child: Card(
@@ -98,7 +98,7 @@ class PoliDetailState extends State<PoliDetail> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   poliDetailUbahButton(),
-                  poliDetailHapusButton(),
+                  poliDetailHapusButton(context),
                 ],
               )
             ],
@@ -117,7 +117,7 @@ class PoliDetailState extends State<PoliDetail> {
         child: const Text("Ubah", style: TextStyle(color: Colors.black, decorationColor: Colors.green, decorationStyle: TextDecorationStyle.wavy)));
   }
 
-  poliDetailHapusButton() {
+  poliDetailHapusButton(BuildContext context) {
     return ElevatedButton(
         onPressed: () {
           showDialog(
@@ -127,7 +127,7 @@ class PoliDetailState extends State<PoliDetail> {
                     actions: [
                       ElevatedButton(
                         onPressed: () async {
-                          context.read<PoliBloc>().add(OnPoliDelete(poli: poli));
+                          context.read<PoliBloc>().add(OnPoliDelete(id: poli.id ?? ""));
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PoliPage()));
                         },
                         style: ElevatedButton.styleFrom(backgroundColor: Colors.red),

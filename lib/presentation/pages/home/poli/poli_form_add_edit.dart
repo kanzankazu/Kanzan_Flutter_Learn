@@ -65,6 +65,15 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
               ),
             );
           }
+          if (state.status == Status.loaded && state.returnOnPoliSave != null) {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: state.returnOnPoliSave!)));
+            poliNameCtrl.clear();
+          }
+          if (state.status == Status.loaded && state.returnOnPoliEdit != null) {
+            Navigator.pop(context);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: state.returnOnPoliEdit!)));
+            poliNameCtrl.clear();
+          }
         },
         builder: (context, state) {
           return Scaffold(
@@ -78,7 +87,7 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         child: Column(
-                          children: [_fieldNamaPoli(), _tombolSimpan(context)],
+                          children: [_fieldNamaPoli(context), _tombolSimpan(context)],
                         ),
                       ),
                     ),
@@ -90,7 +99,7 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
     );
   }
 
-  _fieldNamaPoli() {
+  _fieldNamaPoli(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(16),
       child: TextField(
@@ -106,14 +115,9 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
           if (_isPoliNull) {
             Poli poli = Poli(namaPoli: poliNameCtrl.text);
             context.read<PoliBloc>().add(OnPoliSave(poli: poli));
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: poli)));
-            poliNameCtrl.clear();
           } else {
             var poli = Poli(id: poliId, namaPoli: poliNameCtrl.text);
             context.read<PoliBloc>().add(OnPoliEdit(poli: poli));
-            Navigator.pop(context);
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PoliDetail(poli: poli)));
-            poliNameCtrl.clear();
           }
         },
         child: Text(titleButton));

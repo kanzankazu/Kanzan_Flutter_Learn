@@ -11,5 +11,5 @@ abstract class PoliRepository {
 
   Future<Result<Failure, Poli>> getById(String id);
 
-  Future<Result<Failure, Poli>> delete(Poli poli);
+  Future<Result<Failure, Poli>> delete(String id);
 }

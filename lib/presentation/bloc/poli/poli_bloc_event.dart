@@ -31,7 +31,7 @@ class OnPoliEdit extends PoliBlocEvent {
 }
 
 class OnPoliDelete extends PoliBlocEvent {
-  const OnPoliDelete({required this.poli});
+  const OnPoliDelete({required this.id});
 
-  final Poli poli;
+  final String id;
 }
