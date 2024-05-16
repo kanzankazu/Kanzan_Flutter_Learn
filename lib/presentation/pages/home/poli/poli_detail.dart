@@ -80,6 +80,8 @@ class PoliDetailState extends State<PoliDetail> {
     return Container(
       padding: const EdgeInsets.all(16),
       child: Card(
+        elevation: 4,
+        shadowColor: Colors.blue,
         child: Container(
           padding: const EdgeInsets.all(16),
           child: Column(
@@ -88,7 +90,9 @@ class PoliDetailState extends State<PoliDetail> {
               Center(
                 child: Text(
                   "Nama Poli : ${poli.namaPoli}",
-                  style: const TextStyle(fontSize: 20),
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
               ),
               const SizedBox(
@@ -131,19 +135,36 @@ class PoliDetailState extends State<PoliDetail> {
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const PoliPage()));
                         },
                         style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                        child: const Text("YA", style: TextStyle(color: Colors.black, decorationColor: Colors.green, decorationStyle: TextDecorationStyle.wavy)),
+                        child: const Text(
+                          "YA",
+                          style: TextStyle(
+                            color: Colors.black,
+                            decorationColor: Colors.green,
+                            decorationStyle: TextDecorationStyle.wavy,
+                          ),
+                        ),
                       ),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.pop(contextDialog);
                         },
                         style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                        child: const Text("Tidak", style: TextStyle(color: Colors.black, decorationColor: Colors.green, decorationStyle: TextDecorationStyle.wavy)),
+                        child: const Text("Tidak",
+                            style: TextStyle(
+                              color: Colors.black,
+                              decorationColor: Colors.green,
+                              decorationStyle: TextDecorationStyle.wavy,
+                            )),
                       )
                     ],
                   ));
         },
         style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-        child: const Text("Hapus", style: TextStyle(color: Colors.black, decorationColor: Colors.green, decorationStyle: TextDecorationStyle.wavy)));
+        child: const Text("Hapus",
+            style: TextStyle(
+              color: Colors.black,
+              decorationColor: Colors.green,
+              decorationStyle: TextDecorationStyle.wavy,
+            )));
   }
 }

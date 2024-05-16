@@ -29,9 +29,14 @@ class Sidebar extends StatelessWidget {
           },
           builder: (context, state) {
             return ListView(
+              shrinkWrap: true,
               padding: EdgeInsets.zero,
               children: [
-                const UserAccountsDrawerHeader(accountName: Text("Admin"), accountEmail: Text("admin@admin.com")),
+                const UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(color: Colors.blue),
+                  accountName: Text("Admin"),
+                  accountEmail: Text("admin@admin.com"),
+                ),
                 ListTile(
                   leading: const Icon(Icons.home),
                   title: const Text("Beranda"),

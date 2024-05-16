@@ -60,7 +60,11 @@ class PoliPageState extends State<PoliPage> {
                     onRefresh: () async {
                       context.read<PoliBloc>().add(OnPoliGetList());
                     },
-                    child: ListView.builder(
+                    child: GridView.builder(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: 3,
+                        ),
                         physics: const AlwaysScrollableScrollPhysics(),
                         padding: const EdgeInsets.all(8),
                         itemCount: state.returnOnPoliGetList?.length ?? 0,
@@ -75,8 +79,11 @@ class PoliPageState extends State<PoliPage> {
                               });
                             },
                             child: Container(
-                              padding: const EdgeInsets.only(bottom: 8),
+                              padding: const EdgeInsets.all(4),
                               child: Card(
+                                shadowColor: Colors.blue,
+                                elevation: 4,
+                                borderOnForeground: true,
                                 child: ListTile(
                                   title: Text("Poli ${state.returnOnPoliGetList?[index].namaPoli}"),
                                 ),

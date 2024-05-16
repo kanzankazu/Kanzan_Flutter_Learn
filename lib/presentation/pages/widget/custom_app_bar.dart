@@ -21,8 +21,11 @@ class _CustomAppBar extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Text(widget.title),
+      backgroundColor: Colors.blue,
+      title: Text(
+        widget.title,
+        style: const TextStyle(color: Colors.white),
+      ),
       actions: widget.actions,
     );
   }

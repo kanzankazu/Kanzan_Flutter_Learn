@@ -3,6 +3,7 @@
 import 'package:belajar_flutter/common/utils/generics/bloc_status_util.dart';
 import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/presentation/bloc/poli/poli_bloc.dart';
+import 'package:belajar_flutter/presentation/pages/home/pegawai/pegawai_page.dart';
 import 'package:belajar_flutter/presentation/pages/home/poli/poli_page.dart';
 import 'package:belajar_flutter/presentation/pages/home/sidebar.dart';
 import 'package:belajar_flutter/presentation/pages/widget/custom_app_bar.dart';
@@ -57,10 +58,17 @@ class _BerandaState extends State<Beranda> {
                   ),
                 ),
                 Expanded(
-                  child: KanzanData(
-                    title: "Data Pegawai",
-                    data: "0 Pegawai",
-                    icon: Icons.people,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PegawaiPage())).then((value) {
+                        context.read<PoliBloc>().add(OnPoliGetList());
+                      });
+                    },
+                    child: KanzanData(
+                      title: "Data Pegawai",
+                      data: "0 Pegawai",
+                      icon: Icons.people,
+                    ),
                   ),
                 ),
               ],

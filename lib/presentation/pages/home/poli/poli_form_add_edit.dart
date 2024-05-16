@@ -84,6 +84,8 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
                   child: Container(
                     padding: const EdgeInsets.all(16),
                     child: Card(
+                      elevation: 4,
+                      shadowColor: Colors.blue,
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         child: Column(
@@ -111,6 +113,10 @@ class PoliFormAddEditState extends State<PoliFormAddEdit> {
 
   _tombolSimpan(BuildContext context) {
     return ElevatedButton(
+        style: const ButtonStyle(
+          elevation: MaterialStatePropertyAll(4),
+          shadowColor: MaterialStatePropertyAll(Colors.blue),
+        ),
         onPressed: () async {
           if (_isPoliNull) {
             Poli poli = Poli(namaPoli: poliNameCtrl.text);
