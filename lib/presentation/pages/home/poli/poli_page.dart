@@ -60,11 +60,7 @@ class PoliPageState extends State<PoliPage> {
                     onRefresh: () async {
                       context.read<PoliBloc>().add(OnPoliGetList());
                     },
-                    child: GridView.builder(
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: 3,
-                        ),
+                    child: ListView.builder(
                         physics: const AlwaysScrollableScrollPhysics(),
                         padding: const EdgeInsets.all(8),
                         itemCount: state.returnOnPoliGetList?.length ?? 0,
