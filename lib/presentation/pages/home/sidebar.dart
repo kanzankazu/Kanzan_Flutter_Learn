@@ -1,8 +1,9 @@
 import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/presentation/bloc/login/login_logout_bloc.dart';
-import 'package:belajar_flutter/presentation/pages/home/beranda.dart';
+import 'package:belajar_flutter/presentation/pages/home/home.dart';
 import 'package:belajar_flutter/presentation/pages/home/poli/poli_page.dart';
 import 'package:belajar_flutter/presentation/pages/login/pages/login.dart';
+import 'package:belajar_flutter/presentation/pages/widget/widgetexample/example_widget_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,7 +42,7 @@ class Sidebar extends StatelessWidget {
                   leading: const Icon(Icons.home),
                   title: const Text("Beranda"),
                   onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Beranda()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Home()));
                   },
                 ),
                 ListTile(
@@ -56,6 +57,13 @@ class Sidebar extends StatelessWidget {
                   title: const Text("Pegawai"),
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const PegawaiPage()));
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.people),
+                  title: const Text("Example Widget"),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ExampleWidgetPage()));
                   },
                 ),
                 /*ListTile(

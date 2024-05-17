@@ -1,16 +1,14 @@
+import 'package:belajar_flutter/presentation/pages/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class ColumnWidget extends StatelessWidget {
-  const ColumnWidget({super.key});
+class ColumnSample extends StatelessWidget {
+  const ColumnSample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Widget Column"),
-      ),
-      body: const Center(
+    return const Scaffold(
+      appBar: CustomAppBar(title: "Column Widget"),
+      body: Center(
         child: Column(
           children: [
             Text("Kolom 1"),

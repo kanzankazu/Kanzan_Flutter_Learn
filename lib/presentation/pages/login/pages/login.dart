@@ -1,7 +1,7 @@
 import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/domain/entities/request/login_request.dart';
 import 'package:belajar_flutter/presentation/bloc/login/login_logout_bloc.dart';
-import 'package:belajar_flutter/presentation/pages/home/beranda.dart';
+import 'package:belajar_flutter/presentation/pages/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -101,7 +101,7 @@ class LoginState extends State<Login> {
             if (state.returnLogin != null) {
               var value = state.returnLogin;
               if (value?.$1 == true) {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Beranda()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Home()));
               } else {
                 AlertDialog alertDialog = AlertDialog(
                   content: Text(value!.$2),

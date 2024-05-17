@@ -1,11 +1,13 @@
+import 'package:belajar_flutter/presentation/pages/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class RowColumnGrid extends StatelessWidget {
-  const RowColumnGrid({super.key});
+class RowColumnGridSample extends StatelessWidget {
+  const RowColumnGridSample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(title: "Row Column Grid"),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

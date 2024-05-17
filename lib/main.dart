@@ -2,7 +2,7 @@ import 'package:belajar_flutter/common/utils/single_bloc_observer.dart';
 import 'package:belajar_flutter/data/sources/local/user_local_source.dart';
 import 'package:belajar_flutter/di/injections.dart';
 import 'package:belajar_flutter/presentation/bloc/login/login_logout_bloc.dart';
-import 'package:belajar_flutter/presentation/pages/home/beranda.dart';
+import 'package:belajar_flutter/presentation/pages/home/home.dart';
 import 'package:belajar_flutter/presentation/pages/login/pages/login.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
         ),
-        home: token == null ? const Login() : const Beranda(),
+        home: token == null ? const Login() : const Home(),
       ),
     ); //////
   }

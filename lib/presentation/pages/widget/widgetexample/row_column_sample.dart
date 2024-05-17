@@ -1,7 +1,8 @@
+import 'package:belajar_flutter/presentation/pages/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class BarisKolom extends StatelessWidget {
-  const BarisKolom({super.key});
+class RowColumnSample extends StatelessWidget {
+  const RowColumnSample({super.key});
 
   final int baris = 3;
   final int totalData = 9;
@@ -9,10 +10,7 @@ class BarisKolom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Baris Kolom"),
-      ),
+      appBar: const CustomAppBar(title: "Baris Kolom"),
       body: GridView.count(
         crossAxisCount: baris,
         children: List.generate(totalData, (index) {

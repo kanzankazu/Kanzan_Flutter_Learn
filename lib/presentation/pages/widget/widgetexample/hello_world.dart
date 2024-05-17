@@ -1,3 +1,4 @@
+import 'package:belajar_flutter/presentation/pages/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HelloWorld extends StatelessWidget {
@@ -5,12 +6,9 @@ class HelloWorld extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Ini AppBar"),
-      ),
-      body: const Center(
+    return const Scaffold(
+      appBar: CustomAppBar(title: "Hello World"),
+      body: Center(
         child: Text("Ini Text Center"),
       ),
     );
