@@ -13,6 +13,7 @@ import 'package:belajar_flutter/presentation/pages/widget/widgetexample/row_colu
 import 'package:belajar_flutter/presentation/pages/widget/widgetexample/row_column_sample.dart';
 import 'package:belajar_flutter/presentation/pages/widget/widgetexample/row_sample.dart';
 import 'package:belajar_flutter/presentation/pages/widget/widgetexample/stepper_sample.dart';
+import 'package:belajar_flutter/presentation/pages/widget/widgetexample/webview_sample.dart';
 import 'package:flutter/material.dart';
 
 class ExampleWidgetPage extends StatelessWidget {
@@ -36,11 +37,8 @@ class ExampleWidgetPage extends StatelessWidget {
           exampleWidgetPageItem(context, "Listview In Listview", builder: (context) => ListviewInListviewSample()),
           exampleWidgetPageItem(context, "Stepper", builder: (context) => StepperSample()),
           exampleWidgetPageItem(context, "Bottom Nav Sample", builder: (context) => BottomNavFABSample()),
-          exampleWidgetPageItem(context, "Bottom Nav Page Sample",
-              builder: (context) => BottomNavPageSample(
-                    title: "Bottom Nav Page Sample",
-                    key: null,
-                  )),
+          exampleWidgetPageItem(context, "Bottom Nav Page Sample", builder: (context) => BottomNavPageSample(title: "Bottom Nav Page Sample")),
+          exampleWidgetPageItem(context, "Webview Sample", builder: (context) => WebviewSample()),
         ],
       ),
     );
